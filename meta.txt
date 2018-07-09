@@ -1,0 +1,25 @@
+A program for sorting n rowers into n/4 boats of 4 people each, following a few constraints and loosely optimizing the process. The optimization will be based on pairwise scores for rowers, rather than the rowers themselves. The pairwise scores could represent coach's opinions of who works well together, or the rowers opinions of each other, or something else entirely. The point is that the optimal boat depends on the rowers relationships to each other, rather than the value of an
+individual rower. There are many factors involved in a good boat, so the program should store generated arrangements in a csv file, and should be able to do a simplistic statistical analysis on them. (mean, median and mode at the very least.)
+
+Constraints:
+Each rower has 5 friends, and must be in a boat with at least one friend.
+
+Each rower is either competitive or casual. Each boat must be have exactly half casual and half competitive.
+
+Data:
+The data will be presented in 2 csv files, one for the rowers, and one for the pairwise scores
+
+rower.csv:
+7 columns and n rows. Each row represents 1 rower, and contains his name(unique), the names of his friends, and a flag which is 1 for competitive and 0 for casual.
+
+example:
+
+andrew,bob,chad,derek,eric,frank,0
+derek,chad,frank,gerald,harry,issac,1
+
+pairwise.csv:
+3 columns with n*n rows, the pairwise scores for all rowers. Each row will contain the names of the rowers in any order, and the the score. The score is a positive integer between 0 and 10, where 10 is very high and 0 is very low. Friends do not neccessarily have a high pairwise score( the coach may want to separate them for disciplines sake)
+
+example:
+derek,frank,7
+andrew,bob,2
